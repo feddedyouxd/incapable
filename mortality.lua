@@ -421,7 +421,7 @@ ThemeManager:ApplyToTab(Tabs['UI Settings'])
                 end	
                    if getgenv().NotifMode then
                     game.StarterGui:SetCore("SendNotification", {
-            Title = "angel.lua";
+            Title = "mortality.lua";
             Text = "Target: "..tostring(Plr.Character.Humanoid.DisplayName);
         
         })
